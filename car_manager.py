@@ -22,7 +22,7 @@ class CarManager():
     def move_cars(self):
         for car in self.cars:
             car.forward(self.moving_distance)
-            # if car reaces -300 on the x axis, remove it from the list self.cars
+            # if car reaches -300 on the x axis, remove it from the list self.cars
             if car.xcor() < -300:
                 # Remove the car from the list
                 self.cars.remove(car)
