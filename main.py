@@ -19,8 +19,7 @@ game_is_on = True
 loop_count = 0
 while game_is_on:
     time.sleep(0.1)
-    if loop_count % 6 == 0:
-        car_mgr.create_car()
+    car_mgr.create_car()
 
     car_mgr.move_cars()
 

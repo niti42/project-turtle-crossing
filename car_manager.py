@@ -11,17 +11,18 @@ class CarManager():
         self.moving_distance = STARTING_MOVE_DISTANCE
 
     def create_car(self):
-        car = Turtle(shape="square")
-        car.shapesize(stretch_wid=1, stretch_len=2)
-        car.color(random.choice(COLORS))
-        car.penup()
-        car.setheading(180)
-        car.goto((300, random.choice(range(-250, 250))))
-        self.cars.append(car)
+        random_chance = random.randint(1, 6)
+        if random_chance == 1:
+            car = Turtle(shape="square")
+            car.shapesize(stretch_wid=1, stretch_len=2)
+            car.color(random.choice(COLORS))
+            car.penup()
+            car.goto((300, random.choice(range(-250, 250))))
+            self.cars.append(car)
 
     def move_cars(self):
         for car in self.cars:
-            car.forward(self.moving_distance)
+            car.backward(self.moving_distance)
             # if car reaches -300 on the x axis, remove it from the list self.cars
             if car.xcor() < -300:
                 # Remove the car from the list
